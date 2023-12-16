@@ -286,22 +286,19 @@ body {
   box-sizing: border-box;
 }
 
-/* Create three equal columns that floats next to each other */
 .column {
   float: left;
   width: 33.33%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: 300px;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
@@ -315,11 +312,9 @@ body {
   {%if products%}
   <h3 style="text-align:center; color:yellow;">{{word}}</h3>
   <br>
-  <!-- products data starttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt -->
   <div class="row">
 
       {% for p in products %}
-      <!-- card1 -->
       <div class="column">
       <div class="container page-wrapper" style="width: 450px;">
         <div class="page-inner">
@@ -342,7 +337,7 @@ body {
                 </div>
 
                 <a class="cart" href="{% url 'add-to-cart' p.id  %}">
-                  <span class="price">₹ {{p.price}}</span>
+                  <span class="price">MAD {{p.price}}</span>
                   <span class="add-to-cart">
                     <span class="txt">Add in cart</span>
                   </span>
@@ -353,7 +348,6 @@ body {
         </div>
       </div>
       </div>
-<!-- card1 end -->
 {% if forloop.counter|divisibleby:"3" %}
     </div>
     <div class="row">
@@ -362,7 +356,6 @@ body {
 
   {% endfor %}
 </div>
-<!-- products data enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
 
 
 {%else%}
@@ -380,11 +373,7 @@ body {
 <br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
+
 
 
 
